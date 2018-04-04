@@ -3,7 +3,7 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
-make-build-debug/
+cmake-build-debug/
 build/
 DerivedData/
 
