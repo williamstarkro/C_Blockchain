@@ -15,6 +15,8 @@ public:
     string GetHash();
 
     void MineBlock(uint32_t nDifficulty);
+    string _CalculateHash();
+
 
 private:
     uint32_t _nIndex;
@@ -23,7 +25,6 @@ private:
     string _sHash;
     time_t _tTime;
 
-    string _CalculateHash();
 
 };
 

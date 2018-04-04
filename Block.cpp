@@ -25,7 +25,7 @@ void Block::MineBlock(uint32_t nDifficulty) {
         _sHash = _CalculateHash();
     } while (_sHash.substr(0, nDifficulty) != str);
 
-    cout << "Block mined: " << _sHash << endl;
+    cout << "Block mined: " << _sHash << " " << _sData << endl;
 }
 
 inline string Block::_CalculateHash() {

@@ -1,6 +1,11 @@
 #include "Blockchain.h"
+#include "Wallet.h"
 
 int main() {
+
+    Wallet wallet = Wallet();
+    wallet.GeneratePublicKey();
+
     Blockchain bChain = Blockchain();
 
     cout << "Mining block 1..." << endl;
@@ -11,6 +16,8 @@ int main() {
 
     cout << "Mining block 3..." << endl;
     bChain.AddBlock(Block(3, "Block 3 Data"));
+
+    cout << bChain.isChainValid();
 
     return 0;
 };

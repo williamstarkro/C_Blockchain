@@ -3,4 +3,4 @@ project(C_TUT)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(C_TUT main.cpp Block.cpp Block.h Blockchain.cpp Blockchain.h sha256.cpp sha256.h)
+add_executable(C_TUT main.cpp Block.cpp Block.h Blockchain.cpp Blockchain.h sha256.cpp sha256.h Wallet.cpp Wallet.h Transaction.cpp Transaction.h)
