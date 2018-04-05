@@ -10,9 +10,6 @@
 
 using namespace std;
 
-Wallet::Wallet(){
-}
-
 void Wallet::GeneratePublicKey() {
 
     char cStrHex[StringLength+1] = {0};
@@ -33,20 +30,6 @@ void Wallet::GeneratePublicKey() {
 
 //Program for RSA asymmetric cryptographic algorithm
 //for demonstration values are relatively small compared to practical application
-
-//to find gcd
-int gcd(int a, int h)
-{
-    int temp;
-    while(1)
-    {
-        temp = a%h;
-        if(temp==0)
-            return h;
-        a = h;
-        h = temp;
-    }
-}
 
 void Wallet::_PrivateKeyGenerator() {
 
@@ -73,9 +56,6 @@ void Wallet::ce() {
     k = 0;
     for (int i = 2; i < t; i++)
     {
-        if (t % i == 0) {
-            continue;
-        }
         flag = prime(i);
         if (flag == 1 && i != p && i != q)
         {

@@ -1,23 +1,25 @@
 #include "Blockchain.h"
 #include "Wallet.h"
+#include <vector>
+#include "Transaction.h"
+
+
 
 int main() {
 
-    Wallet wallet = Wallet();
-    wallet.GeneratePublicKey();
-
     Blockchain bChain = Blockchain();
+    Wallet walletA = Wallet();
+    Wallet walletB = Wallet();
 
-    cout << "Mining block 1..." << endl;
-    bChain.AddBlock(Block(1, "Block 1 Data"));
-
-    cout << "Mining block 2..." << endl;
-    bChain.AddBlock(Block(2, "Block 2 Data"));
-
-    cout << "Mining block 3..." << endl;
-    bChain.AddBlock(Block(3, "Block 3 Data"));
-
-    cout << bChain.isChainValid();
+    cout << "Private and public keys:" << endl;
+    walletA.GeneratePublicKey();
+    walletB.GeneratePublicKey();
+    //Create a test transaction from WalletA to walletB
+    Transaction transaction = Transaction(walletA.publicKey, walletB.publicKey, 5, 0);
+    transaction.generateSignature(walletA.GetPrivateKey());
+    //Verify the signature works and verify it from the public key
+    cout << "Is signature verified";
+    cout << transaction.verifiySignature();
 
     return 0;
 };

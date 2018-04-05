@@ -20,6 +20,7 @@ public:
     int prime(long int);
     long int cd(long int);
     void encrypt(char m[]);
+    static string GetPrivateKey() { _privateKey };
     Wallet();
 
 
